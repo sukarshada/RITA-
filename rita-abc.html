@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Rita's ABC Garden 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink-1:#ffe3f1;
+    --pink-2:#ffc7e3;
+    --pink-3:#ff9ccf;
+    --pink-4:#ff6fb5;
+    --pink-5:#ff4aa3;
+    --cream:#fff7fb;
+    --text:#8a2c66;
+    --text-soft:#b9578f;
+    --shadow:rgba(255,111,181,.35);
+    --mint:#b9f3e4;
+    --lilac:#e4d4ff;
+    --sun:#ffe08a;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    font-family:'Fredoka',system-ui,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(circle at 15% 15%, #fff 0 8px, transparent 9px),
+      radial-gradient(circle at 80% 25%, #fff 0 6px, transparent 7px),
+      radial-gradient(circle at 60% 80%, #fff 0 7px, transparent 8px),
+      radial-gradient(circle at 30% 70%, #fff 0 5px, transparent 6px),
+      linear-gradient(160deg,var(--pink-1),var(--pink-2) 55%,var(--pink-3));
+    background-attachment:fixed;
+    min-height:100%;
+    overflow-x:hidden;
+    user-select:none;
+  }
+  /* floating fluffy clouds */
+  .cloud{position:fixed;background:#fff;border-radius:50%;opacity:.55;filter:blur(.3px);pointer-events:none;z-index:0;
+    box-shadow:40px 10px 0 0 #fff, 80px 0 0 -6px #fff, -30px 12px 0 -4px #fff;}
+  .c1{width:70px;height:40px;top:12%;left:-60px;animation:float1 34s linear infinite;}
+  .c2{width:50px;height:30px;top:40%;left:-60px;animation:float1 46s linear infinite;animation-delay:-8s;}
+  .c3{width:90px;height:50px;top:68%;left:-80px;animation:float1 40s linear infinite;animation-delay:-20s;}
+  @keyframes float1{to{transform:translateX(120vw);}}
+
+  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:18px 16px 46px;}
+
+  header{text-align:center;padding:6px 0 2px;}
+  .title{
+    font-family:'Baloo 2',cursive;font-weight:700;
+    font-size:clamp(30px,8vw,46px);
+    color:var(--pink-5);
+    text-shadow:0 3px 0 #fff, 0 6px 14px var(--shadow);
+    letter-spacing:.5px;line-height:1;margin:0;
+  }
+  .subtitle{font-size:clamp(14px,3.6vw,18px);color:var(--text-soft);margin:6px 0 0;font-weight:500;}
+
+  /* Rita mascot */
+  .rita{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 6px;}
+  .rita-face{
+    width:92px;height:92px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #fff, var(--pink-2));
+    box-shadow:inset 0 -8px 16px var(--pink-3),0 8px 20px var(--shadow);
+    position:relative;animation:bob 3s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .rita-face::before,.rita-face::after{content:"";position:absolute;width:13px;height:16px;background:#5a2a46;border-radius:50%;top:36px;}
+  .rita-face::before{left:28px;} .rita-face::after{right:28px;}
+  .cheek{position:absolute;width:16px;height:11px;background:var(--pink-5);border-radius:50%;top:52px;opacity:.65;}
+  .cheek.l{left:18px;} .cheek.r{right:18px;}
+  .mouth{position:absolute;width:20px;height:11px;border-bottom:4px solid #5a2a46;border-radius:0 0 20px 20px;left:36px;top:54px;}
+  .bow{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:30px;}
+  .speech{
+    background:#fff;border-radius:18px;padding:10px 16px;font-weight:600;color:var(--text-soft);
+    box-shadow:0 6px 16px var(--shadow);position:relative;max-width:190px;font-size:15px;
+  }
+  .speech::after{content:"";position:absolute;left:-10px;top:24px;border:8px solid transparent;border-right-color:#fff;}
+
+  /* day schedule */
+  .panel{
+    background:rgba(255,255,255,.75);backdrop-filter:blur(6px);
+    border-radius:26px;padding:16px;margin:14px 0;
+    box-shadow:0 10px 30px var(--shadow);border:3px solid #fff;
+  }
+  .panel h2{font-family:'Baloo 2';margin:0 0 10px;font-size:19px;color:var(--pink-5);text-align:center;}
+  .days{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+  .day-btn{
+    border:none;cursor:pointer;font-family:'Fredoka';font-weight:600;font-size:14px;
+    background:#fff;color:var(--text-soft);border-radius:16px;padding:10px 12px;
+    box-shadow:0 4px 10px var(--shadow);transition:transform .15s, background .2s;
+    display:flex;flex-direction:column;align-items:center;gap:3px;min-width:84px;
+  }
+  .day-btn .dl{font-size:12px;opacity:.8;}
+  .day-btn .dletters{font-weight:700;color:var(--pink-5);font-size:15px;letter-spacing:1px;}
+  .day-btn:active{transform:scale(.94);}
+  .day-btn.active{background:linear-gradient(160deg,var(--pink-4),var(--pink-5));color:#fff;transform:translateY(-2px);}
+  .day-btn.active .dletters,.day-btn.active .dl{color:#fff;}
+  .day-btn.done::after{content:"⭐";font-size:12px;}
+
+  /* practice card */
+  .card{text-align:center;}
+  .letternav{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px;}
+  .arrow{
+    border:none;background:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;
+    font-size:22px;color:var(--pink-5);box-shadow:0 5px 12px var(--shadow);transition:transform .12s;
+  }
+  .arrow:active{transform:scale(.9);}
+  .arrow:disabled{opacity:.4;cursor:default;}
+  .progress{font-weight:600;color:var(--text-soft);font-size:15px;min-width:70px;}
+
+  .trace-stage{position:relative;width:min(340px,86vw);height:min(340px,86vw);margin:4px auto 2px;}
+  .guide{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Baloo 2',cursive;font-weight:700;pointer-events:none;
+    font-size:min(300px,76vw);line-height:1;
+    color:transparent;-webkit-text-stroke:5px var(--pink-3);
+    text-stroke:5px var(--pink-3);
+    opacity:.75;
+  }
+  .guide .lower{position:absolute;bottom:4px;right:10px;font-size:min(120px,30vw);-webkit-text-stroke:3px var(--pink-2);opacity:.6;}
+  canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:30px;touch-action:none;
+    background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 4px #fff, 0 10px 26px var(--shadow);cursor:crosshair;}
+
+  .word{font-family:'Baloo 2';font-size:20px;color:var(--pink-5);margin:8px 0 2px;}
+  .word .big{font-size:26px;}
+
+  .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
+  .btn{
+    border:none;cursor:pointer;font-family:'Fredoka';font-weight:600;font-size:16px;
+    padding:13px 20px;border-radius:20px;color:#fff;
+    box-shadow:0 6px 16px var(--shadow);transition:transform .12s;display:flex;align-items:center;gap:7px;
+  }
+  .btn:active{transform:scale(.94);}
+  .btn.hear{background:linear-gradient(160deg,var(--pink-4),var(--pink-5));}
+  .btn.clear{background:linear-gradient(160deg,#9fd8ff,#5bb6ff);}
+  .btn.star{background:linear-gradient(160deg,#ffcf5b,#ff9f1c);}
+
+  /* celebration */
+  .confetti{position:fixed;top:-20px;font-size:22px;z-index:5;pointer-events:none;animation:fall 2.4s ease-in forwards;}
+  @keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0;}}
+
+  footer{text-align:center;margin-top:20px;color:var(--text-soft);font-size:13px;opacity:.8;}
+</style>
+</head>
+<body>
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+
+  <div class="wrap">
+    <header>
+      <h1 class="title">Rita's ABC Garden</h1>
+      <p class="subtitle">Trace it ✏️ · Hear it 🔊 · Shine ⭐</p>
+    </header>
+
+    <div class="rita">
+      <div class="rita-face">
+        <span class="bow">🎀</span>
+        <span class="cheek l"></span><span class="cheek r"></span>
+        <span class="mouth"></span>
+      </div>
+      <div class="speech" id="speech">Hi, I'm Rita! Let's learn a letter! 🌸</div>
+    </div>
+
+    <div class="panel">
+      <h2>🗓️ My Letter Days</h2>
+      <div class="days" id="days"></div>
+    </div>
+
+    <div class="panel card">
+      <div class="letternav">
+        <button class="arrow" id="prev">◀</button>
+        <span class="progress" id="progress">1 / 4</span>
+        <button class="arrow" id="next">▶</button>
+      </div>
+
+      <div class="trace-stage">
+        <div class="guide" id="guide"><span class="upper">A</span><span class="lower">a</span></div>
+        <canvas id="pad"></canvas>
+      </div>
+
+      <div class="word" id="word"><span class="big">A</span> is for <b>Apple</b> 🍎</div>
+
+      <div class="actions">
+        <button class="btn hear" id="hear">🔊 Hear it</button>
+        <button class="btn star" id="done">⭐ I did it!</button>
+        <button class="btn clear" id="clear">🧽 Clear</button>
+      </div>
+    </div>
+
+    <footer>Made with 💕 for Rita · trace, listen, and collect stars every day</footer>
+  </div>
+
+<script>
+/* ---------- Letters, words & daily groups ---------- */
+const LETTERS = {
+  A:["Apple","🍎"], B:["Ball","⚽"], C:["Cat","🐱"], D:["Dog","🐶"],
+  E:["Egg","🥚"], F:["Fish","🐟"], G:["Grapes","🍇"], H:["Hat","👒"],
+  I:["Ice cream","🍦"], J:["Jam","🍓"], K:["Kite","🪁"], L:["Lion","🦁"],
+  M:["Moon","🌙"], N:["Nest","🪺"], O:["Orange","🍊"], P:["Panda","🐼"],
+  Q:["Queen","👑"], R:["Rainbow","🌈"], S:["Star","⭐"], T:["Tree","🌳"],
+  U:["Umbrella","☂️"], V:["Violet","🌷"], W:["Whale","🐳"], X:["Xylophone","🎹"],
+  Y:["Yarn","🧶"], Z:["Zebra","🦓"]
+};
+
+/* a few letters each day, in little groups */
+const DAYS = [
+  {label:"Day 1", letters:["A","B","C","D"]},
+  {label:"Day 2", letters:["E","F","G","H"]},
+  {label:"Day 3", letters:["I","J","K","L"]},
+  {label:"Day 4", letters:["M","N","O","P"]},
+  {label:"Day 5", letters:["Q","R","S","T"]},
+  {label:"Day 6", letters:["U","V","W","X"]},
+  {label:"Day 7", letters:["Y","Z"]},
+];
+
+/* ---------- State ---------- */
+let dayIndex = 0;
+let letterIndex = 0;
+const doneDays = new Set(JSON.parse(localStorage.getItem('rita_done')||'[]'));
+
+/* ---------- Build day buttons ---------- */
+const daysEl = document.getElementById('days');
+function renderDays(){
+  daysEl.innerHTML='';
+  DAYS.forEach((d,i)=>{
+    const b=document.createElement('button');
+    b.className='day-btn'+(i===dayIndex?' active':'')+(doneDays.has(i)?' done':'');
+    b.innerHTML=`<span class="dl">${d.label}</span><span class="dletters">${d.letters.join(' ')}</span>`;
+    b.onclick=()=>{ dayIndex=i; letterIndex=0; renderDays(); showLetter(); say("Day "+(i+1)+"! Let's go!"); };
+    daysEl.appendChild(b);
+  });
+}
+
+/* ---------- Letter display ---------- */
+const guide=document.getElementById('guide');
+const wordEl=document.getElementById('word');
+const progressEl=document.getElementById('progress');
+const prevBtn=document.getElementById('prev');
+const nextBtn=document.getElementById('next');
+
+function currentLetter(){ return DAYS[dayIndex].letters[letterIndex]; }
+
+function showLetter(){
+  const L=currentLetter();
+  const [wrd,emo]=LETTERS[L];
+  guide.innerHTML=`<span class="upper">${L}</span><span class="lower">${L.toLowerCase()}</span>`;
+  wordEl.innerHTML=`<span class="big">${L} ${L.toLowerCase()}</span> is for <b>${wrd}</b> ${emo}`;
+  progressEl.textContent=(letterIndex+1)+" / "+DAYS[dayIndex].letters.length;
+  prevBtn.disabled=letterIndex===0;
+  nextBtn.disabled=letterIndex===DAYS[dayIndex].letters.length-1;
+  clearPad();
+  speechBubble(`This is <b>${L}</b> 🌸`);
+}
+
+prevBtn.onclick=()=>{ if(letterIndex>0){letterIndex--;showLetter();} };
+nextBtn.onclick=()=>{
+  if(letterIndex<DAYS[dayIndex].letters.length-1){letterIndex++;showLetter();}
+};
+
+/* ---------- Speech (hear the letter) ---------- */
+let voices=[];
+function loadVoices(){ voices=speechSynthesis.getVoices(); }
+if('speechSynthesis' in window){
+  loadVoices();
+  speechSynthesis.onvoiceschanged=loadVoices;
+}
+function pickVoice(){
+  // prefer a clear English voice, female if available
+  return voices.find(v=>/en(-|_)?(US|GB)/i.test(v.lang)&&/female|samantha|karen|zira|google us/i.test(v.name))
+      || voices.find(v=>/^en/i.test(v.lang))
+      || voices[0];
+}
+function say(text){
+  if(!('speechSynthesis' in window))return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  const v=pickVoice(); if(v)u.voice=v;
+  u.lang=(v&&v.lang)||'en-US'; u.rate=.85; u.pitch=1.25;
+  speechSynthesis.speak(u);
+}
+function hearLetter(){
+  const L=currentLetter();
+  const [wrd]=LETTERS[L];
+  speechSynthesis.cancel();
+  // say the letter, then the letter again slowly, then the word
+  say(`${L}. ${L}. ${L} is for ${wrd}.`);
+  speechBubble(`Say it: <b>${L}</b>!`);
+}
+document.getElementById('hear').onclick=hearLetter;
+
+/* ---------- Speech bubble helper ---------- */
+const speechEl=document.getElementById('speech');
+function speechBubble(html){ speechEl.innerHTML=html; }
+
+/* ---------- Tracing canvas ---------- */
+const pad=document.getElementById('pad');
+const ctx=pad.getContext('2d');
+let drawing=false, last=null;
+
+function sizePad(){
+  const r=pad.getBoundingClientRect();
+  const dpr=window.devicePixelRatio||1;
+  pad.width=r.width*dpr; pad.height=r.height*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.lineCap='round'; ctx.lineJoin='round';
+}
+window.addEventListener('resize',()=>{sizePad();});
+function clearPad(){ ctx.clearRect(0,0,pad.width,pad.height); }
+document.getElementById('clear').onclick=()=>{clearPad();speechBubble("Fresh start! ✨");};
+
+function pos(e){
+  const r=pad.getBoundingClientRect();
+  const t=e.touches?e.touches[0]:e;
+  return {x:t.clientX-r.left, y:t.clientY-r.top};
+}
+function start(e){e.preventDefault();drawing=true;last=pos(e);}
+function move(e){
+  if(!drawing)return; e.preventDefault();
+  const p=pos(e);
+  // sparkly gradient stroke
+  const grad=ctx.createLinearGradient(last.x,last.y,p.x,p.y);
+  grad.addColorStop(0,'#ff6fb5'); grad.addColorStop(1,'#ff4aa3');
+  ctx.strokeStyle=grad; ctx.lineWidth=16;
+  ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke();
+  last=p;
+}
+function end(){drawing=false;}
+pad.addEventListener('mousedown',start);
+pad.addEventListener('mousemove',move);
+window.addEventListener('mouseup',end);
+pad.addEventListener('touchstart',start,{passive:false});
+pad.addEventListener('touchmove',move,{passive:false});
+pad.addEventListener('touchend',end);
+
+/* ---------- "I did it!" reward ---------- */
+function confetti(){
+  const emojis=['🌸','⭐','💕','🎀','✨','🌈','🦄'];
+  for(let i=0;i<26;i++){
+    const s=document.createElement('div');
+    s.className='confetti';
+    s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDelay=(Math.random()*.6)+'s';
+    s.style.fontSize=(16+Math.random()*18)+'px';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),3000);
+  }
+}
+document.getElementById('done').onclick=()=>{
+  confetti();
+  const L=currentLetter();
+  say(`Great job, Rita! You did the letter ${L}!`);
+  speechBubble("Yaaay! You did it! 🌟");
+  // mark day done if on the last letter
+  if(letterIndex===DAYS[dayIndex].letters.length-1){
+    doneDays.add(dayIndex);
+    localStorage.setItem('rita_done',JSON.stringify([...doneDays]));
+    renderDays();
+  }
+};
+
+/* ---------- Init ---------- */
+renderDays();
+sizePad();
+showLetter();
+</script>
+</body>
+</html>
