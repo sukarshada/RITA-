@@ -9,37 +9,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --pink-1:#ffe3f1;
-    --pink-2:#ffc7e3;
-    --pink-3:#ff9ccf;
-    --pink-4:#ff6fb5;
-    --pink-5:#ff4aa3;
-    --cream:#fff7fb;
-    --text:#8a2c66;
-    --text-soft:#b9578f;
-    --shadow:rgba(255,111,181,.35);
-    --mint:#b9f3e4;
-    --lilac:#e4d4ff;
-    --sun:#ffe08a;
+    --pink-1:#ffe3f1; --pink-2:#ffc7e3; --pink-3:#ff9ccf; --pink-4:#ff6fb5; --pink-5:#ff4aa3;
+    --cream:#fff7fb; --text:#8a2c66; --text-soft:#b9578f; --shadow:rgba(255,111,181,.35);
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{margin:0;padding:0;height:100%;}
   body{
-    font-family:'Fredoka',system-ui,sans-serif;
-    color:var(--text);
+    font-family:'Fredoka',system-ui,sans-serif;color:var(--text);
     background:
       radial-gradient(circle at 15% 15%, #fff 0 8px, transparent 9px),
       radial-gradient(circle at 80% 25%, #fff 0 6px, transparent 7px),
       radial-gradient(circle at 60% 80%, #fff 0 7px, transparent 8px),
       radial-gradient(circle at 30% 70%, #fff 0 5px, transparent 6px),
       linear-gradient(160deg,var(--pink-1),var(--pink-2) 55%,var(--pink-3));
-    background-attachment:fixed;
-    min-height:100%;
-    overflow-x:hidden;
-    user-select:none;
+    background-attachment:fixed;min-height:100%;overflow-x:hidden;user-select:none;
   }
-  /* floating fluffy clouds */
-  .cloud{position:fixed;background:#fff;border-radius:50%;opacity:.55;filter:blur(.3px);pointer-events:none;z-index:0;
+  .cloud{position:fixed;background:#fff;border-radius:50%;opacity:.55;pointer-events:none;z-index:0;
     box-shadow:40px 10px 0 0 #fff, 80px 0 0 -6px #fff, -30px 12px 0 -4px #fff;}
   .c1{width:70px;height:40px;top:12%;left:-60px;animation:float1 34s linear infinite;}
   .c2{width:50px;height:30px;top:40%;left:-60px;animation:float1 46s linear infinite;animation-delay:-8s;}
@@ -47,25 +32,14 @@
   @keyframes float1{to{transform:translateX(120vw);}}
 
   .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:18px 16px 46px;}
-
   header{text-align:center;padding:6px 0 2px;}
-  .title{
-    font-family:'Baloo 2',cursive;font-weight:700;
-    font-size:clamp(30px,8vw,46px);
-    color:var(--pink-5);
-    text-shadow:0 3px 0 #fff, 0 6px 14px var(--shadow);
-    letter-spacing:.5px;line-height:1;margin:0;
-  }
+  .title{font-family:'Baloo 2',cursive;font-weight:700;font-size:clamp(30px,8vw,46px);color:var(--pink-5);
+    text-shadow:0 3px 0 #fff, 0 6px 14px var(--shadow);letter-spacing:.5px;line-height:1;margin:0;}
   .subtitle{font-size:clamp(14px,3.6vw,18px);color:var(--text-soft);margin:6px 0 0;font-weight:500;}
 
-  /* Rita mascot */
   .rita{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 6px;}
-  .rita-face{
-    width:92px;height:92px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, #fff, var(--pink-2));
-    box-shadow:inset 0 -8px 16px var(--pink-3),0 8px 20px var(--shadow);
-    position:relative;animation:bob 3s ease-in-out infinite;
-  }
+  .rita-face{width:92px;height:92px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #fff, var(--pink-2));
+    box-shadow:inset 0 -8px 16px var(--pink-3),0 8px 20px var(--shadow);position:relative;animation:bob 3s ease-in-out infinite;}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
   .rita-face::before,.rita-face::after{content:"";position:absolute;width:13px;height:16px;background:#5a2a46;border-radius:50%;top:36px;}
   .rita-face::before{left:28px;} .rita-face::after{right:28px;}
@@ -73,74 +47,79 @@
   .cheek.l{left:18px;} .cheek.r{right:18px;}
   .mouth{position:absolute;width:20px;height:11px;border-bottom:4px solid #5a2a46;border-radius:0 0 20px 20px;left:36px;top:54px;}
   .bow{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:30px;}
-  .speech{
-    background:#fff;border-radius:18px;padding:10px 16px;font-weight:600;color:var(--text-soft);
-    box-shadow:0 6px 16px var(--shadow);position:relative;max-width:190px;font-size:15px;
-  }
+  .speech{background:#fff;border-radius:18px;padding:10px 16px;font-weight:600;color:var(--text-soft);
+    box-shadow:0 6px 16px var(--shadow);position:relative;max-width:200px;font-size:15px;}
   .speech::after{content:"";position:absolute;left:-10px;top:24px;border:8px solid transparent;border-right-color:#fff;}
 
-  /* day schedule */
-  .panel{
-    background:rgba(255,255,255,.75);backdrop-filter:blur(6px);
-    border-radius:26px;padding:16px;margin:14px 0;
-    box-shadow:0 10px 30px var(--shadow);border:3px solid #fff;
-  }
+  .panel{background:rgba(255,255,255,.75);backdrop-filter:blur(6px);border-radius:26px;padding:16px;margin:14px 0;
+    box-shadow:0 10px 30px var(--shadow);border:3px solid #fff;}
   .panel h2{font-family:'Baloo 2';margin:0 0 10px;font-size:19px;color:var(--pink-5);text-align:center;}
   .days{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
-  .day-btn{
-    border:none;cursor:pointer;font-family:'Fredoka';font-weight:600;font-size:14px;
-    background:#fff;color:var(--text-soft);border-radius:16px;padding:10px 12px;
-    box-shadow:0 4px 10px var(--shadow);transition:transform .15s, background .2s;
-    display:flex;flex-direction:column;align-items:center;gap:3px;min-width:84px;
-  }
+  .day-btn{border:none;cursor:pointer;font-family:'Fredoka';font-weight:600;font-size:14px;background:#fff;color:var(--text-soft);
+    border-radius:16px;padding:10px 12px;box-shadow:0 4px 10px var(--shadow);transition:transform .15s, background .2s;
+    display:flex;flex-direction:column;align-items:center;gap:3px;min-width:86px;position:relative;}
   .day-btn .dl{font-size:12px;opacity:.8;}
   .day-btn .dletters{font-weight:700;color:var(--pink-5);font-size:15px;letter-spacing:1px;}
   .day-btn:active{transform:scale(.94);}
   .day-btn.active{background:linear-gradient(160deg,var(--pink-4),var(--pink-5));color:#fff;transform:translateY(-2px);}
   .day-btn.active .dletters,.day-btn.active .dl{color:#fff;}
-  .day-btn.done::after{content:"⭐";font-size:12px;}
+  .badges{position:absolute;top:-8px;right:-6px;font-size:13px;display:flex;gap:1px;}
 
-  /* practice card */
   .card{text-align:center;}
   .letternav{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px;}
-  .arrow{
-    border:none;background:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;
-    font-size:22px;color:var(--pink-5);box-shadow:0 5px 12px var(--shadow);transition:transform .12s;
-  }
+  .arrow{border:none;background:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:22px;color:var(--pink-5);
+    box-shadow:0 5px 12px var(--shadow);transition:transform .12s;}
   .arrow:active{transform:scale(.9);}
   .arrow:disabled{opacity:.4;cursor:default;}
   .progress{font-weight:600;color:var(--text-soft);font-size:15px;min-width:70px;}
 
   .trace-stage{position:relative;width:min(340px,86vw);height:min(340px,86vw);margin:4px auto 2px;}
-  .guide{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-family:'Baloo 2',cursive;font-weight:700;pointer-events:none;
-    font-size:min(300px,76vw);line-height:1;
-    color:transparent;-webkit-text-stroke:5px var(--pink-3);
-    text-stroke:5px var(--pink-3);
-    opacity:.75;
-  }
+  .guide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-weight:700;
+    pointer-events:none;font-size:min(300px,76vw);line-height:1;color:transparent;-webkit-text-stroke:5px var(--pink-3);opacity:.75;}
   .guide .lower{position:absolute;bottom:4px;right:10px;font-size:min(120px,30vw);-webkit-text-stroke:3px var(--pink-2);opacity:.6;}
-  canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:30px;touch-action:none;
+  #demo{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s;
+    background:rgba(255,255,255,.72);border-radius:30px;}
+  #demo.show{opacity:1;}
+  canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:30px;touch-action:none;z-index:2;
     background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 4px #fff, 0 10px 26px var(--shadow);cursor:crosshair;}
 
-  .word{font-family:'Baloo 2';font-size:20px;color:var(--pink-5);margin:8px 0 2px;}
+  .hint{font-size:14px;color:var(--text-soft);min-height:20px;margin:6px auto 0;max-width:320px;font-weight:500;}
+  .word{font-family:'Baloo 2';font-size:20px;color:var(--pink-5);margin:6px 0 2px;}
   .word .big{font-size:26px;}
 
-  .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
-  .btn{
-    border:none;cursor:pointer;font-family:'Fredoka';font-weight:600;font-size:16px;
-    padding:13px 20px;border-radius:20px;color:#fff;
-    box-shadow:0 6px 16px var(--shadow);transition:transform .12s;display:flex;align-items:center;gap:7px;
-  }
+  .actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
+  .btn{border:none;cursor:pointer;font-family:'Fredoka';font-weight:600;font-size:15px;padding:12px 17px;border-radius:20px;color:#fff;
+    box-shadow:0 6px 16px var(--shadow);transition:transform .12s;display:flex;align-items:center;gap:6px;}
   .btn:active{transform:scale(.94);}
   .btn.hear{background:linear-gradient(160deg,var(--pink-4),var(--pink-5));}
+  .btn.show{background:linear-gradient(160deg,#c6a6ff,#9a6bff);}
   .btn.clear{background:linear-gradient(160deg,#9fd8ff,#5bb6ff);}
   .btn.star{background:linear-gradient(160deg,#ffcf5b,#ff9f1c);}
+  .btn.exam{background:linear-gradient(160deg,#6be3b8,#1fc48a);font-size:17px;padding:14px 22px;}
 
-  /* celebration */
-  .confetti{position:fixed;top:-20px;font-size:22px;z-index:5;pointer-events:none;animation:fall 2.4s ease-in forwards;}
+  .confetti{position:fixed;top:-20px;font-size:22px;z-index:50;pointer-events:none;animation:fall 2.4s ease-in forwards;}
   @keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0;}}
+
+  /* exam modal */
+  .overlay{position:fixed;inset:0;background:rgba(255,120,185,.35);backdrop-filter:blur(4px);z-index:40;
+    display:none;align-items:center;justify-content:center;padding:18px;}
+  .overlay.open{display:flex;}
+  .exam-box{background:var(--cream);border-radius:28px;padding:22px 20px;max-width:440px;width:100%;text-align:center;
+    box-shadow:0 20px 50px rgba(160,40,110,.4);border:4px solid #fff;}
+  .exam-box h3{font-family:'Baloo 2';color:var(--pink-5);margin:0 0 4px;font-size:22px;}
+  .qcount{color:var(--text-soft);font-size:14px;font-weight:600;margin-bottom:10px;}
+  .qprompt{font-size:18px;font-weight:600;color:var(--text);margin:6px 0;}
+  .qvisual{font-size:clamp(60px,20vw,110px);line-height:1;margin:4px 0;font-family:'Baloo 2';color:var(--pink-5);}
+  .options{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px;}
+  .opt{width:72px;height:72px;border:none;border-radius:20px;font-family:'Baloo 2';font-weight:700;font-size:34px;cursor:pointer;
+    background:#fff;color:var(--pink-5);box-shadow:0 6px 14px var(--shadow);transition:transform .12s;}
+  .opt:active{transform:scale(.92);}
+  .opt.correct{background:linear-gradient(160deg,#6be3b8,#1fc48a);color:#fff;}
+  .opt.wrong{background:linear-gradient(160deg,#ffb3b3,#ff7a7a);color:#fff;}
+  .feedback{min-height:24px;font-weight:600;margin-top:12px;font-size:16px;color:var(--text-soft);}
+  .exam-close{margin-top:14px;background:#fff;color:var(--text-soft);border:none;border-radius:16px;padding:9px 16px;
+    font-family:'Fredoka';font-weight:600;cursor:pointer;box-shadow:0 4px 10px var(--shadow);}
+  .result-big{font-size:46px;margin:6px 0;}
 
   footer{text-align:center;margin-top:20px;color:var(--text-soft);font-size:13px;opacity:.8;}
 </style>
@@ -151,21 +130,18 @@
   <div class="wrap">
     <header>
       <h1 class="title">Rita's ABC Garden</h1>
-      <p class="subtitle">Trace it ✏️ · Hear it 🔊 · Shine ⭐</p>
+      <p class="subtitle">Learn it ✍️ · Trace it ✏️ · Hear it 🔊 · Test it 📝</p>
     </header>
 
     <div class="rita">
-      <div class="rita-face">
-        <span class="bow">🎀</span>
-        <span class="cheek l"></span><span class="cheek r"></span>
-        <span class="mouth"></span>
-      </div>
+      <div class="rita-face"><span class="bow">🎀</span><span class="cheek l"></span><span class="cheek r"></span><span class="mouth"></span></div>
       <div class="speech" id="speech">Hi, I'm Rita! Let's learn a letter! 🌸</div>
     </div>
 
     <div class="panel">
       <h2>🗓️ My Letter Days</h2>
       <div class="days" id="days"></div>
+      <p style="text-align:center;color:var(--text-soft);font-size:12px;margin:10px 0 0;">⭐ = traced all letters · 📝 = passed the exam</p>
     </div>
 
     <div class="panel card">
@@ -177,19 +153,30 @@
 
       <div class="trace-stage">
         <div class="guide" id="guide"><span class="upper">A</span><span class="lower">a</span></div>
+        <svg id="demo" viewBox="0 0 100 100"></svg>
         <canvas id="pad"></canvas>
       </div>
 
-      <div class="word" id="word"><span class="big">A</span> is for <b>Apple</b> 🍎</div>
+      <div class="hint" id="hint"></div>
+      <div class="word" id="word"><span class="big">A a</span> is for <b>Apple</b> 🍎</div>
 
       <div class="actions">
+        <button class="btn show" id="show">✍️ Show me how</button>
         <button class="btn hear" id="hear">🔊 Hear it</button>
         <button class="btn star" id="done">⭐ I did it!</button>
         <button class="btn clear" id="clear">🧽 Clear</button>
       </div>
+      <div class="actions">
+        <button class="btn exam" id="examBtn">📝 Take today's exam</button>
+      </div>
     </div>
 
-    <footer>Made with 💕 for Rita · trace, listen, and collect stars every day</footer>
+    <footer>Made with 💕 for Rita · learn, trace, listen, and collect stars every day</footer>
+  </div>
+
+  <!-- Exam modal -->
+  <div class="overlay" id="overlay">
+    <div class="exam-box" id="examBox"></div>
   </div>
 
 <script>
@@ -204,7 +191,6 @@ const LETTERS = {
   Y:["Yarn","🧶"], Z:["Zebra","🦓"]
 };
 
-/* a few letters each day, in little groups */
 const DAYS = [
   {label:"Day 1", letters:["A","B","C","D"]},
   {label:"Day 2", letters:["E","F","G","H"]},
@@ -215,19 +201,79 @@ const DAYS = [
   {label:"Day 7", letters:["Y","Z"]},
 ];
 
-/* ---------- State ---------- */
-let dayIndex = 0;
-let letterIndex = 0;
-const doneDays = new Set(JSON.parse(localStorage.getItem('rita_done')||'[]'));
+/* ---------- Stroke paths (how to write each capital letter) ---------- */
+const STROKES = {
+  A:["M50 15 L30 85","M50 15 L70 85","M38 56 L62 56"],
+  B:["M35 15 L35 85","M35 15 C72 15 72 50 35 50","M35 50 C76 50 76 85 35 85"],
+  C:["M72 30 C40 8 22 40 22 50 C22 60 40 92 72 70"],
+  D:["M35 15 L35 85","M35 15 C78 20 78 80 35 85"],
+  E:["M35 15 L35 85","M35 15 L70 15","M35 50 L62 50","M35 85 L70 85"],
+  F:["M35 15 L35 85","M35 15 L70 15","M35 50 L62 50"],
+  G:["M72 32 C42 6 20 40 22 52 C24 66 46 92 72 70 L72 52 L54 52"],
+  H:["M32 15 L32 85","M68 15 L68 85","M32 50 L68 50"],
+  I:["M50 15 L50 85","M38 15 L62 15","M38 85 L62 85"],
+  J:["M64 15 L64 70 C64 90 36 90 32 70"],
+  K:["M35 15 L35 85","M68 15 L36 52","M44 48 L70 85"],
+  L:["M35 15 L35 85 L70 85"],
+  M:["M28 85 L28 15 L50 56 L72 15 L72 85"],
+  N:["M30 85 L30 15 L70 85 L70 15"],
+  O:["M50 15 C22 15 22 85 50 85 C78 85 78 15 50 15"],
+  P:["M35 85 L35 15","M35 15 C74 15 74 52 35 52"],
+  Q:["M50 15 C22 15 22 85 50 85 C78 85 78 15 50 15","M58 66 L78 90"],
+  R:["M35 85 L35 15","M35 15 C74 15 74 52 35 52","M46 52 L70 85"],
+  S:["M72 28 C72 10 30 10 30 34 C30 54 72 48 72 68 C72 92 30 90 28 70"],
+  T:["M50 15 L50 85","M26 15 L74 15"],
+  U:["M30 15 L30 58 C30 90 70 90 70 58 L70 15"],
+  V:["M30 15 L50 85 L70 15"],
+  W:["M24 15 L37 85 L50 42 L63 85 L76 15"],
+  X:["M32 15 L68 85","M68 15 L32 85"],
+  Y:["M32 15 L50 52 L68 15","M50 52 L50 85"],
+  Z:["M30 15 L70 15 L32 85 L70 85"]
+};
+const HINTS = {
+  A:"Slide down-left, slide down-right, then a line across the tummy.",
+  B:"Big line down, then two bumps on the right — top one, bottom one.",
+  C:"Start at the top and curve around to the left, like a smile hug.",
+  D:"Line down, then a big belly curve back to the bottom.",
+  E:"Line down, then three lines going right: top, middle, bottom.",
+  F:"Line down, then two lines right: top and middle.",
+  G:"A C shape, then a little shelf pointing in.",
+  H:"Two tall lines, then join them in the middle.",
+  I:"A line straight down, with a hat and shoes.",
+  J:"Down, then a curve that swings to the left at the bottom.",
+  K:"Line down, then kick in and kick out.",
+  L:"Line down, then a line along the floor to the right.",
+  M:"Down, up to a point, down to the middle, up, and down.",
+  N:"Down, up the mountain, and down again.",
+  O:"One big round circle — all the way around.",
+  P:"Line down, then one bump at the top.",
+  Q:"A big circle, then a little tail at the bottom.",
+  R:"Line down, a bump at the top, then kick out a leg.",
+  S:"A wiggle — curve one way, then curve back the other way.",
+  T:"A line straight down, then a hat across the top.",
+  U:"Down, curve along the bottom, and back up.",
+  V:"Slide down to a point, then back up — a little valley.",
+  W:"Down, up, down, up — two little valleys.",
+  X:"One slanted line, then cross it the other way.",
+  Y:"Two lines meet in the middle, then a line straight down.",
+  Z:"Across the top, slide down, across the bottom — zig zag!"
+};
 
-/* ---------- Build day buttons ---------- */
-const daysEl = document.getElementById('days');
+/* ---------- State ---------- */
+let dayIndex=0, letterIndex=0;
+const doneDays=new Set(JSON.parse(localStorage.getItem('rita_done')||'[]'));
+const examPass=new Set(JSON.parse(localStorage.getItem('rita_exam')||'[]'));
+
+/* ---------- Day buttons ---------- */
+const daysEl=document.getElementById('days');
 function renderDays(){
   daysEl.innerHTML='';
   DAYS.forEach((d,i)=>{
     const b=document.createElement('button');
-    b.className='day-btn'+(i===dayIndex?' active':'')+(doneDays.has(i)?' done':'');
-    b.innerHTML=`<span class="dl">${d.label}</span><span class="dletters">${d.letters.join(' ')}</span>`;
+    b.className='day-btn'+(i===dayIndex?' active':'');
+    let badges=(doneDays.has(i)?'⭐':'')+(examPass.has(i)?'📝':'');
+    b.innerHTML=`<span class="dl">${d.label}</span><span class="dletters">${d.letters.join(' ')}</span>`+
+      (badges?`<span class="badges">${badges}</span>`:'');
     b.onclick=()=>{ dayIndex=i; letterIndex=0; renderDays(); showLetter(); say("Day "+(i+1)+"! Let's go!"); };
     daysEl.appendChild(b);
   });
@@ -236,41 +282,33 @@ function renderDays(){
 /* ---------- Letter display ---------- */
 const guide=document.getElementById('guide');
 const wordEl=document.getElementById('word');
+const hintEl=document.getElementById('hint');
 const progressEl=document.getElementById('progress');
 const prevBtn=document.getElementById('prev');
 const nextBtn=document.getElementById('next');
-
 function currentLetter(){ return DAYS[dayIndex].letters[letterIndex]; }
 
 function showLetter(){
-  const L=currentLetter();
-  const [wrd,emo]=LETTERS[L];
+  const L=currentLetter(); const [wrd,emo]=LETTERS[L];
   guide.innerHTML=`<span class="upper">${L}</span><span class="lower">${L.toLowerCase()}</span>`;
   wordEl.innerHTML=`<span class="big">${L} ${L.toLowerCase()}</span> is for <b>${wrd}</b> ${emo}`;
+  hintEl.textContent=HINTS[L]||'';
   progressEl.textContent=(letterIndex+1)+" / "+DAYS[dayIndex].letters.length;
   prevBtn.disabled=letterIndex===0;
   nextBtn.disabled=letterIndex===DAYS[dayIndex].letters.length-1;
-  clearPad();
+  clearPad(); hideDemo();
   speechBubble(`This is <b>${L}</b> 🌸`);
 }
-
 prevBtn.onclick=()=>{ if(letterIndex>0){letterIndex--;showLetter();} };
-nextBtn.onclick=()=>{
-  if(letterIndex<DAYS[dayIndex].letters.length-1){letterIndex++;showLetter();}
-};
+nextBtn.onclick=()=>{ if(letterIndex<DAYS[dayIndex].letters.length-1){letterIndex++;showLetter();} };
 
-/* ---------- Speech (hear the letter) ---------- */
+/* ---------- Speech ---------- */
 let voices=[];
 function loadVoices(){ voices=speechSynthesis.getVoices(); }
-if('speechSynthesis' in window){
-  loadVoices();
-  speechSynthesis.onvoiceschanged=loadVoices;
-}
+if('speechSynthesis' in window){ loadVoices(); speechSynthesis.onvoiceschanged=loadVoices; }
 function pickVoice(){
-  // prefer a clear English voice, female if available
   return voices.find(v=>/en(-|_)?(US|GB)/i.test(v.lang)&&/female|samantha|karen|zira|google us/i.test(v.name))
-      || voices.find(v=>/^en/i.test(v.lang))
-      || voices[0];
+      || voices.find(v=>/^en/i.test(v.lang)) || voices[0];
 }
 function say(text){
   if(!('speechSynthesis' in window))return;
@@ -281,90 +319,222 @@ function say(text){
   speechSynthesis.speak(u);
 }
 function hearLetter(){
-  const L=currentLetter();
-  const [wrd]=LETTERS[L];
-  speechSynthesis.cancel();
-  // say the letter, then the letter again slowly, then the word
+  const L=currentLetter(); const [wrd]=LETTERS[L];
   say(`${L}. ${L}. ${L} is for ${wrd}.`);
   speechBubble(`Say it: <b>${L}</b>!`);
 }
 document.getElementById('hear').onclick=hearLetter;
 
-/* ---------- Speech bubble helper ---------- */
 const speechEl=document.getElementById('speech');
 function speechBubble(html){ speechEl.innerHTML=html; }
+
+/* ---------- Tutorial: animated stroke demo ---------- */
+const demo=document.getElementById('demo');
+const SVGNS="http://www.w3.org/2000/svg";
+let demoTimers=[];
+function hideDemo(){ demo.classList.remove('show'); demo.innerHTML=''; demoTimers.forEach(clearTimeout); demoTimers=[]; }
+
+function playDemo(){
+  const L=currentLetter();
+  const strokes=STROKES[L]||[];
+  hideDemo();
+  demo.classList.add('show');
+  say(`Let's write ${L}. Watch the pen!`);
+  speechBubble(`Watch how to write <b>${L}</b> ✍️`);
+
+  // faint full outline underneath
+  strokes.forEach(d=>{
+    const g=document.createElementNS(SVGNS,'path');
+    g.setAttribute('d',d); g.setAttribute('fill','none');
+    g.setAttribute('stroke','#ffd6ec'); g.setAttribute('stroke-width','9');
+    g.setAttribute('stroke-linecap','round'); g.setAttribute('stroke-linejoin','round');
+    demo.appendChild(g);
+  });
+
+  const pen=document.createElementNS(SVGNS,'text');
+  pen.setAttribute('font-size','11'); pen.setAttribute('text-anchor','middle');
+  pen.setAttribute('dominant-baseline','middle'); pen.textContent='🖊️';
+  demo.appendChild(pen);
+
+  let delay=0;
+  const strokeDur=1100;
+  strokes.forEach((d,si)=>{
+    const t=setTimeout(()=>{
+      const path=document.createElementNS(SVGNS,'path');
+      path.setAttribute('d',d); path.setAttribute('fill','none');
+      path.setAttribute('stroke','#ff4aa3'); path.setAttribute('stroke-width','9');
+      path.setAttribute('stroke-linecap','round'); path.setAttribute('stroke-linejoin','round');
+      demo.appendChild(path);
+      const len=path.getTotalLength();
+      path.style.strokeDasharray=len; path.style.strokeDashoffset=len;
+      path.getBoundingClientRect(); // reflow
+      path.style.transition=`stroke-dashoffset ${strokeDur}ms linear`;
+      path.style.strokeDashoffset=0;
+
+      // number badge at stroke start
+      const p0=path.getPointAtLength(0);
+      const circ=document.createElementNS(SVGNS,'circle');
+      circ.setAttribute('cx',p0.x); circ.setAttribute('cy',p0.y); circ.setAttribute('r','7');
+      circ.setAttribute('fill','#9a6bff'); demo.appendChild(circ);
+      const num=document.createElementNS(SVGNS,'text');
+      num.setAttribute('x',p0.x); num.setAttribute('y',p0.y+0.5); num.setAttribute('font-size','9');
+      num.setAttribute('fill','#fff'); num.setAttribute('text-anchor','middle');
+      num.setAttribute('dominant-baseline','middle'); num.setAttribute('font-weight','700');
+      num.textContent=si+1; demo.appendChild(num);
+
+      // move the pen along the stroke
+      const startT=performance.now();
+      function step(now){
+        const t=Math.min((now-startT)/strokeDur,1);
+        const pt=path.getPointAtLength(len*t);
+        pen.setAttribute('x',pt.x); pen.setAttribute('y',pt.y-4);
+        if(t<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    },delay);
+    demoTimers.push(t);
+    delay+=strokeDur+350;
+  });
+
+  // finish: fade out so she can trace
+  const tEnd=setTimeout(()=>{
+    speechBubble(`Now you try <b>${L}</b>! ✏️`);
+    say(`Now you try! Trace the ${L}.`);
+    setTimeout(hideDemo,900);
+  },delay+200);
+  demoTimers.push(tEnd);
+}
+document.getElementById('show').onclick=playDemo;
 
 /* ---------- Tracing canvas ---------- */
 const pad=document.getElementById('pad');
 const ctx=pad.getContext('2d');
-let drawing=false, last=null;
-
+let drawing=false,last=null;
 function sizePad(){
-  const r=pad.getBoundingClientRect();
-  const dpr=window.devicePixelRatio||1;
+  const r=pad.getBoundingClientRect(); const dpr=window.devicePixelRatio||1;
   pad.width=r.width*dpr; pad.height=r.height*dpr;
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  ctx.lineCap='round'; ctx.lineJoin='round';
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.lineCap='round'; ctx.lineJoin='round';
 }
-window.addEventListener('resize',()=>{sizePad();});
+window.addEventListener('resize',sizePad);
 function clearPad(){ ctx.clearRect(0,0,pad.width,pad.height); }
-document.getElementById('clear').onclick=()=>{clearPad();speechBubble("Fresh start! ✨");};
-
-function pos(e){
-  const r=pad.getBoundingClientRect();
-  const t=e.touches?e.touches[0]:e;
-  return {x:t.clientX-r.left, y:t.clientY-r.top};
-}
+document.getElementById('clear').onclick=()=>{clearPad();hideDemo();speechBubble("Fresh start! ✨");};
+function pos(e){ const r=pad.getBoundingClientRect(); const t=e.touches?e.touches[0]:e; return {x:t.clientX-r.left,y:t.clientY-r.top}; }
 function start(e){e.preventDefault();drawing=true;last=pos(e);}
 function move(e){
-  if(!drawing)return; e.preventDefault();
-  const p=pos(e);
-  // sparkly gradient stroke
+  if(!drawing)return;e.preventDefault();const p=pos(e);
   const grad=ctx.createLinearGradient(last.x,last.y,p.x,p.y);
-  grad.addColorStop(0,'#ff6fb5'); grad.addColorStop(1,'#ff4aa3');
-  ctx.strokeStyle=grad; ctx.lineWidth=16;
-  ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke();
-  last=p;
+  grad.addColorStop(0,'#ff6fb5');grad.addColorStop(1,'#ff4aa3');
+  ctx.strokeStyle=grad;ctx.lineWidth=16;
+  ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;
 }
 function end(){drawing=false;}
-pad.addEventListener('mousedown',start);
-pad.addEventListener('mousemove',move);
-window.addEventListener('mouseup',end);
-pad.addEventListener('touchstart',start,{passive:false});
-pad.addEventListener('touchmove',move,{passive:false});
-pad.addEventListener('touchend',end);
+pad.addEventListener('mousedown',start);pad.addEventListener('mousemove',move);window.addEventListener('mouseup',end);
+pad.addEventListener('touchstart',start,{passive:false});pad.addEventListener('touchmove',move,{passive:false});pad.addEventListener('touchend',end);
 
-/* ---------- "I did it!" reward ---------- */
+/* ---------- Celebration ---------- */
 function confetti(){
-  const emojis=['🌸','⭐','💕','🎀','✨','🌈','🦄'];
+  const e=['🌸','⭐','💕','🎀','✨','🌈','🦄'];
   for(let i=0;i<26;i++){
-    const s=document.createElement('div');
-    s.className='confetti';
-    s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
-    s.style.left=Math.random()*100+'vw';
-    s.style.animationDelay=(Math.random()*.6)+'s';
-    s.style.fontSize=(16+Math.random()*18)+'px';
-    document.body.appendChild(s);
+    const s=document.createElement('div');s.className='confetti';
+    s.textContent=e[Math.floor(Math.random()*e.length)];
+    s.style.left=Math.random()*100+'vw';s.style.animationDelay=(Math.random()*.6)+'s';
+    s.style.fontSize=(16+Math.random()*18)+'px';document.body.appendChild(s);
     setTimeout(()=>s.remove(),3000);
   }
 }
 document.getElementById('done').onclick=()=>{
-  confetti();
-  const L=currentLetter();
+  confetti(); const L=currentLetter();
   say(`Great job, Rita! You did the letter ${L}!`);
   speechBubble("Yaaay! You did it! 🌟");
-  // mark day done if on the last letter
   if(letterIndex===DAYS[dayIndex].letters.length-1){
-    doneDays.add(dayIndex);
-    localStorage.setItem('rita_done',JSON.stringify([...doneDays]));
-    renderDays();
+    doneDays.add(dayIndex); localStorage.setItem('rita_done',JSON.stringify([...doneDays])); renderDays();
   }
 };
 
+/* ---------- Daily Exam ---------- */
+const overlay=document.getElementById('overlay');
+const examBox=document.getElementById('examBox');
+const ALL=Object.keys(LETTERS);
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+let exam=null;
+function buildExam(){
+  const letters=DAYS[dayIndex].letters;
+  const qs=shuffle(letters).map(L=>{
+    const type=Math.random()<0.5?'listen':'word';
+    // options: this day's letters, padded to >=3 with random others
+    let opts=new Set(letters);
+    while(opts.size<3){ opts.add(ALL[Math.floor(Math.random()*ALL.length)]); }
+    return {L, type, options:shuffle([...opts])};
+  });
+  exam={qs, i:0, score:0, firstTry:true};
+}
+function openExam(){
+  buildExam(); overlay.classList.add('open');
+  say(`Exam time for Day ${dayIndex+1}! You can do it, Rita!`);
+  renderQ();
+}
+function renderQ(){
+  const q=exam.qs[exam.i]; exam.firstTry=true;
+  const [wrd,emo]=LETTERS[q.L];
+  let prompt, visual;
+  if(q.type==='listen'){ prompt="🔊 Listen — tap the letter you hear!"; visual="👂"; }
+  else { prompt=`Which letter does this start with?`; visual=`${emo}<div style="font-size:22px;color:var(--text-soft)">${wrd}</div>`; }
+
+  examBox.innerHTML=`
+    <h3>📝 Day ${dayIndex+1} Exam</h3>
+    <div class="qcount">Question ${exam.i+1} of ${exam.qs.length} · ⭐ ${exam.score}</div>
+    <div class="qprompt">${prompt}</div>
+    <div class="qvisual">${visual}</div>
+    <div class="options" id="opts"></div>
+    <div class="feedback" id="fb"></div>
+    <button class="exam-close" id="quit">Close</button>`;
+  const optsEl=document.getElementById('opts');
+  q.options.forEach(op=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.textContent=op;
+    b.onclick=()=>answer(b,op,q);
+    optsEl.appendChild(b);
+  });
+  document.getElementById('quit').onclick=closeExam;
+  if(q.type==='listen'){ setTimeout(()=>say(`${q.L}. ${q.L}.`),450); }
+}
+function answer(btn,op,q){
+  const fb=document.getElementById('fb');
+  if(op===q.L){
+    btn.classList.add('correct');
+    if(exam.firstTry) exam.score++;
+    fb.textContent="🎉 Yes! That's "+q.L+"!";
+    say(`Yes! ${q.L}! Well done!`);
+    [...document.querySelectorAll('.opt')].forEach(b=>b.disabled=true);
+    setTimeout(()=>{ exam.i++; (exam.i<exam.qs.length)?renderQ():finishExam(); },1100);
+  } else {
+    btn.classList.add('wrong'); btn.disabled=true; exam.firstTry=false;
+    fb.textContent="Try again 💗"; say("Try again!");
+  }
+}
+function finishExam(){
+  const total=exam.qs.length, s=exam.score; confetti();
+  const passed=s>=Math.ceil(total*0.6);
+  if(passed){ examPass.add(dayIndex); localStorage.setItem('rita_exam',JSON.stringify([...examPass])); renderDays(); }
+  say(passed?`Amazing Rita! You got ${s} out of ${total}! You passed!`:`Good try! You got ${s} out of ${total}. Let's practice and try again!`);
+  examBox.innerHTML=`
+    <h3>${passed?'🌟 You passed! 🌟':'💪 Good try!'}</h3>
+    <div class="result-big">${passed?'🎀🏆🎀':'🌸'}</div>
+    <div class="qprompt">You got <b>${s}</b> out of <b>${total}</b> ${'⭐'.repeat(s)}</div>
+    <div class="feedback">${passed?'This day gets a 📝 badge!':'Trace the letters again, then re-take the exam. You’ve got this! 💕'}</div>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap">
+      <button class="btn exam" id="again">🔁 Try again</button>
+      <button class="exam-close" id="quit2">Close</button>
+    </div>`;
+  document.getElementById('again').onclick=openExam;
+  document.getElementById('quit2').onclick=closeExam;
+}
+function closeExam(){ overlay.classList.remove('open'); speechSynthesis.cancel(); }
+document.getElementById('examBtn').onclick=openExam;
+
 /* ---------- Init ---------- */
-renderDays();
-sizePad();
-showLetter();
+renderDays(); sizePad(); showLetter();
 </script>
 </body>
 </html>
